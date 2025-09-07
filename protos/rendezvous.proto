@@ -28,6 +28,7 @@ message PunchHoleRequest {
   bool force_relay = 8;
   int32 upnp_port = 9;
   bytes socket_addr_v6 = 10;
+  optional StunNatType stun_nat_type = 11;
 }
 
 message PunchHole { 
@@ -54,6 +55,13 @@ enum NatType {
   UNKNOWN_NAT = 0;
   ASYMMETRIC = 1;
   SYMMETRIC = 2;
+}
+
+enum StunNatType {
+  FULL_CONE = 0;
+  RESTRICTED_CONE = 1;
+  PORT_RESTRICTED_CONE = 2;
+  SYMMETRIC = 3;
 }
 
 message PunchHoleSent {
