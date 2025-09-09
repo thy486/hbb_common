@@ -39,6 +39,7 @@ message PunchHole {
   bool force_relay = 5;
   int32 upnp_port = 6;
   bytes socket_addr_v6 = 7;
+  optional StunNatType stun_nat_type = 8;
 }
 
 message TestNatRequest {
@@ -72,6 +73,7 @@ message PunchHoleSent {
   string version = 5;
   int32 upnp_port = 6;
   bytes socket_addr_v6 = 7;
+  optional StunNatType stun_nat_type = 8;
 }
 
 message RegisterPk {
@@ -116,6 +118,7 @@ message PunchHoleResponse {
   bool is_udp = 9;
   int32 upnp_port = 10;
   bytes socket_addr_v6 = 11;
+  optional StunNatType stun_nat_type = 12;
 }
 
 message ConfigUpdate {
